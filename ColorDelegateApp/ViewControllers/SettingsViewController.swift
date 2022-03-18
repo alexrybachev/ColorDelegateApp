@@ -20,27 +20,48 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenColorTextField: UITextField!
     @IBOutlet var blueColorTextField: UITextField!
     
-
+    // MARK: View Properties
+    var colorPreviewView: UIColor!
+    
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        previewColorView.backgroundColor = colorPreviewView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillLayoutSubviews() {
+        previewColorView.layer.cornerRadius = 10
     }
-    */
     
     // MARK: - IBActions
     @IBAction func changeColorSlider(_ sender: UISlider) {
     }
     
 
+}
+
+// MARK: - AlertController
+extension SettingsViewController {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = self.string(for: Double(0))
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - Convert to String
+extension SettingsViewController {
+    private func string(for float: Double) -> String {
+        String(format: "%.2f", float)
+    }
+}
+
+
+extension SettingsViewController {
+    
 }

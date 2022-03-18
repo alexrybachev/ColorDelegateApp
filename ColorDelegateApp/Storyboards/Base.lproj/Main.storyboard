@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="9wM-Zh-qJ8">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="Xwv-o3-f6f">
@@ -151,6 +151,17 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvo-UF-YeC">
+                                <rect key="frame" x="120" y="298" width="80" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="er1-aE-mwa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hoz-C2-Dse"/>
                         <color key="backgroundColor" red="0.1211695663" green="0.17498489010000001" blue="0.60620872420000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -158,8 +169,10 @@
                             <constraint firstItem="BFj-r3-dxN" firstAttribute="leading" secondItem="hoz-C2-Dse" secondAttribute="leading" constant="20" id="Fkg-yQ-tfm"/>
                             <constraint firstItem="hd0-yv-Kro" firstAttribute="leading" secondItem="hoz-C2-Dse" secondAttribute="leading" constant="20" id="LXi-lQ-0AN"/>
                             <constraint firstItem="BFj-r3-dxN" firstAttribute="top" secondItem="hoz-C2-Dse" secondAttribute="top" constant="20" id="WW8-em-ZIf"/>
+                            <constraint firstItem="pvo-UF-YeC" firstAttribute="top" secondItem="hd0-yv-Kro" secondAttribute="bottom" constant="20" id="ZU7-cS-XwY"/>
                             <constraint firstItem="hd0-yv-Kro" firstAttribute="top" secondItem="BFj-r3-dxN" secondAttribute="bottom" constant="20" id="bS5-F8-nBr"/>
                             <constraint firstAttribute="trailing" secondItem="hd0-yv-Kro" secondAttribute="trailing" constant="20" id="mK7-8M-HJy"/>
+                            <constraint firstItem="pvo-UF-YeC" firstAttribute="centerX" secondItem="l02-QG-psN" secondAttribute="centerX" id="rtc-zO-n3r"/>
                             <constraint firstAttribute="trailing" secondItem="BFj-r3-dxN" secondAttribute="trailing" constant="20" id="s3P-zY-0fL"/>
                         </constraints>
                     </view>
