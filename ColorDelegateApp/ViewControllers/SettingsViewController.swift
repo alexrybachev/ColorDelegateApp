@@ -63,6 +63,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        guard let color = settingColorView.backgroundColor else { return }
+        view.endEditing(true)
+        delegate.setColor(for: color)
         dismiss(animated: true)
     }
 }
@@ -158,12 +161,12 @@ extension SettingsViewController {
     }
 }
 
-// MARK: - UIToolbarDelegate
+// MARK: - Add Toolbar
 extension SettingsViewController {
     /// Add buttons on toolbar
     private func addToolBar(_ textfields: UITextField...) {
         let toolBar = UIToolbar()
-        toolBar.barStyle = .default
+//        toolBar.barStyle = .default
         let nextButton = UIBarButtonItem(title: "Next",
                                          style: .plain,
                                          target: self,
@@ -178,7 +181,7 @@ extension SettingsViewController {
         
         let items = [nextButton, flexButton, doneButton]
         toolBar.setItems(items, animated: true)
-        toolBar.isUserInteractionEnabled = true
+//        toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()
         
         for textField in textfields {

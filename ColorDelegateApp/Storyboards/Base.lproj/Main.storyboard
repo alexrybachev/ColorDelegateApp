@@ -161,7 +161,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvo-UF-YeC">
-                                <rect key="frame" x="120" y="258" width="80" height="32"/>
+                                <rect key="frame" x="120" y="496" width="80" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="er1-aE-mwa"/>
                                 </constraints>
@@ -181,8 +181,8 @@
                             <constraint firstItem="BFj-r3-dxN" firstAttribute="leading" secondItem="hoz-C2-Dse" secondAttribute="leading" constant="20" id="Fkg-yQ-tfm"/>
                             <constraint firstItem="hd0-yv-Kro" firstAttribute="leading" secondItem="hoz-C2-Dse" secondAttribute="leading" constant="20" id="LXi-lQ-0AN"/>
                             <constraint firstItem="BFj-r3-dxN" firstAttribute="top" secondItem="hoz-C2-Dse" secondAttribute="top" constant="20" id="WW8-em-ZIf"/>
-                            <constraint firstItem="pvo-UF-YeC" firstAttribute="top" secondItem="hd0-yv-Kro" secondAttribute="bottom" constant="20" id="ZU7-cS-XwY"/>
                             <constraint firstItem="hd0-yv-Kro" firstAttribute="top" secondItem="BFj-r3-dxN" secondAttribute="bottom" constant="20" id="bS5-F8-nBr"/>
+                            <constraint firstItem="hoz-C2-Dse" firstAttribute="bottom" secondItem="pvo-UF-YeC" secondAttribute="bottom" constant="40" id="gUn-fr-yL0"/>
                             <constraint firstAttribute="trailing" secondItem="hd0-yv-Kro" secondAttribute="trailing" constant="20" id="mK7-8M-HJy"/>
                             <constraint firstItem="pvo-UF-YeC" firstAttribute="centerX" secondItem="l02-QG-psN" secondAttribute="centerX" id="rtc-zO-n3r"/>
                             <constraint firstAttribute="trailing" secondItem="BFj-r3-dxN" secondAttribute="trailing" constant="20" id="s3P-zY-0fL"/>
@@ -208,7 +208,6 @@
         <!--Navigation Controller-->
         <scene sceneID="0TH-yf-Drg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LqI-AP-dbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFI-za-PU0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eni-ir-wcY">
@@ -220,6 +219,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yQr-84-p1e"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LqI-AP-dbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
