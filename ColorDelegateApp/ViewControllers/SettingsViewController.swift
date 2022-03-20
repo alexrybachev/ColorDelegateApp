@@ -149,25 +149,6 @@ extension SettingsViewController: UITextFieldDelegate {
     }
 }
 
-/*
-// MARK: - Update values in textfields and labels
-extension SettingsViewController {
-    private func updateValues(_ textField: UITextField) {
-        switch textField {
-        case redColorTextField:
-            redColorSlider.value = Float(textField.text)
-            redColorLabel.text = textField.text
-        case greenColorTextField:
-            greenColorSlider.value = Float(number)
-            greenColorLabel.text = textField.text
-        default:
-            blueColorSlider.value = Float(number)
-            blueColorLabel.text = textField.text
-        }
-    }
-}
- */
-
 // MARK: - AlertController
 extension SettingsViewController {
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
