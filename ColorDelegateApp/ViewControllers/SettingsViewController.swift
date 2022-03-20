@@ -125,21 +125,21 @@ extension SettingsViewController: UITextFieldDelegate {
             return
         }
         
-        guard let number = Double(newValue), (0...1).contains(number) else {
+        guard let number = Float(newValue), (0...1).contains(number) else {
             showAlert(title: "Error!", message: "Input correct number from 0.0 to 1.0", textField: textField)
             return
         }
         
         switch textField {
         case redColorTextField:
-            redColorSlider.value = Float(number)
-            redColorLabel.text = string(Float(number))
+            redColorSlider.value = number
+            redColorLabel.text = string(number)
         case greenColorTextField:
-            greenColorSlider.value = Float(number)
-            greenColorLabel.text = string(Float(number))
+            greenColorSlider.value = number
+            greenColorLabel.text = string(number)
         default:
-            blueColorSlider.value = Float(number)
-            blueColorLabel.text = string(Float(number))
+            blueColorSlider.value = number
+            blueColorLabel.text = string(number)
         }
         
         setColor()
