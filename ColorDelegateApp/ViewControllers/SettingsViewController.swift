@@ -124,6 +124,7 @@ extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let newValue = textField.text, !newValue.isEmpty else {
             showAlert(title: "Error!", message: "Input some number from 0.0 to 1.0", textField: textField)
+            
             return
         }
         
@@ -148,6 +149,25 @@ extension SettingsViewController: UITextFieldDelegate {
     }
 }
 
+/*
+// MARK: - Update values in textfields and labels
+extension SettingsViewController {
+    private func updateValues(_ textField: UITextField) {
+        switch textField {
+        case redColorTextField:
+            redColorSlider.value = Float(textField.text)
+            redColorLabel.text = textField.text
+        case greenColorTextField:
+            greenColorSlider.value = Float(number)
+            greenColorLabel.text = textField.text
+        default:
+            blueColorSlider.value = Float(number)
+            blueColorLabel.text = textField.text
+        }
+    }
+}
+ */
+
 // MARK: - AlertController
 extension SettingsViewController {
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
@@ -161,22 +181,32 @@ extension SettingsViewController {
 }
 
 // MARK: - UIToolbarDelegate
-
-extension SettingsViewController: UIToolbarDelegate {
+extension SettingsViewController {
     /// Add buttons on toolbar
     private func addToolBar(_ textfields: UITextField...) {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
+        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextPressed))
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePressed))
         let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        let items = [flexButton, doneButton]
+        let items = [nextButton, flexButton, doneButton]
         toolBar.setItems(items, animated: true)
         toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()
         
         for textField in textfields {
             textField.inputAccessoryView = toolBar
+        }
+    }
+    
+    @objc private func nextPressed() {
+        if redColorTextField.isEditing {
+            greenColorTextField.becomeFirstResponder()
+        } else if greenColorTextField.isEditing {
+            blueColorTextField.becomeFirstResponder()
+        } else {
+            redColorTextField.becomeFirstResponder()
         }
     }
     
