@@ -164,9 +164,17 @@ extension SettingsViewController {
     private func addToolBar(_ textfields: UITextField...) {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
-        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextPressed))
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePressed))
-        let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let nextButton = UIBarButtonItem(title: "Next",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(nextPressed))
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(donePressed))
+        let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                         target: nil,
+                                         action: nil)
         
         let items = [nextButton, flexButton, doneButton]
         toolBar.setItems(items, animated: true)
