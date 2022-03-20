@@ -31,6 +31,7 @@ class SettingsViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingColorView.layer.cornerRadius = 10
         
         redColorTextField.delegate = self
         greenColorTextField.delegate = self
@@ -42,10 +43,6 @@ class SettingsViewController: UIViewController {
         setTextFields()
         
         addToolBar(redColorTextField, greenColorTextField, blueColorTextField)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        settingColorView.layer.cornerRadius = 10
     }
     
     // MARK: - IBActions
@@ -154,7 +151,12 @@ extension SettingsViewController {
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            textField?.text = "0"
+//            textField?.text = "0"
+            switch textField {
+            case redColorTextField: textField?.text = redColorLabel.text
+            case greenColorTextField: textField?.text = greenColorLabel.text
+            default: textField?.text = blueColorLabel.text
+            }
         }
         alert.addAction(okAction)
         present(alert, animated: true)
